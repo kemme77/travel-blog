@@ -1,11 +1,11 @@
 services:
   mysql:
     image: mysql:8.0
-    container_name: portfolio_mysql
+    container_name: app-infrastructure_mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: Password123
-      MYSQL_DATABASE: portfolio_db
+      MYSQL_DATABASE: app-infrastructure
       MYSQL_USER: kemme
       MYSQL_PASSWORD: Password123
     volumes:
@@ -17,7 +17,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
-    container_name: portfolio_phpmyadmin
+    container_name: app-infrastructure_phpmyadmin
     restart: unless-stopped
     depends_on:
       - mysql
